@@ -1,0 +1,236 @@
+.foto{
+    width: 20%;
+    border-radius: 50%;
+    margin: 5%;
+}
+
+.fotoAside{
+    width: 100%;
+    height: 180px;
+}
+.fotoBot{
+    background-color:  #9c494a;
+    color: white;
+}
+.logoMichi{
+    color: whitesmoke;
+    font-size: 18px;
+    margin: 0px;
+}
+.productos{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background-color: #e3c2bd;
+} 
+a{
+    color:whitesmoke;
+    font-size: 15px;
+}
+h5, h6{
+    color: #6f3032;
+}
+body{
+    display:grid;
+    height: 100vh;
+    justify-content: center;
+    background-color:  #e3c2bd;
+}
+nav{
+    grid-area: nav;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #9c494a;
+    .pH{
+        /*text-align:end;*/
+        width: 100%;
+        margin: 0px;
+    }
+}
+ul{display: none;}
+
+aside{
+    grid-area: aside;
+    text-align: center;
+    justify-content: center;
+    background-color:  #e3c2bd;
+    padding-bottom: 5px;
+    width: 100%;
+    height: 40%;
+}
+.marcadores{
+    .oso{display: none; }
+    .conejo{display: none;}
+}
+.oso{
+    .marcadores{display: none;}
+    conejo{display: none;}
+}
+main{
+    grid-area: main;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    a{
+        text-decoration: none;
+        color:black
+    }
+}
+footer{
+    grid-area: footer;
+    background-color: #6f3032 ;
+    color: white;
+    padding-top: 10px;
+    text-align: center;
+}
+button{
+    background-color: #6f3032 ;
+    border-radius: 5%;
+    padding: 5px;
+    width: 60%;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-radius: 2%;
+    background-color: #e1e2e1;
+}
+.tipo_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-radius: 2%;
+}
+.paginas{
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #e3c2bd;
+}
+
+/* hasta 576 sin tomarlo celular XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+@media (max-width: 576px) {
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 10fr 1fr;
+        grid-template-areas: 
+            "nav"
+            "aside"
+            "main"
+            "footer";
+    }
+    .productos{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    nav{
+        justify-content: space-between;
+    }
+    .contenedor{
+        position: relative;
+    }
+    .menu {
+        position: absolute;
+        background-color: #e3c2bd;
+        border: 1px solid #ccc;
+        margin-top: 30%;
+        display: none; 
+        z-index: 999;
+    }
+    .contenedor:hover .menu {
+        display: block; 
+    }
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .menu li {
+        margin: 5px 0;
+    }
+    .menu a {
+        text-decoration: none;
+        color:black;
+    }
+    .fotoAside{
+        display: none;
+    }
+    .pH{
+        text-align: end;
+        margin-top: 50%;
+        padding-right: 5px;
+        padding-top: 30px;
+    }
+    .caja {
+        .imagen{
+            width: 100%;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease-in-out;
+        }
+        :hover.imagen {
+            filter: grayscale(0%);
+        }
+    }
+    .fotoBot{
+        width: 10%;
+    }
+}
+
+/* desde  576 incluido el 576 computador XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media (min-width: 576px) {
+    body{
+        grid-template-columns: 15% 85%;
+        grid-template-rows: 1fr;
+        height: 100%;
+        grid-template-areas: 
+            "nav aside"
+            "nav main"
+            "footer main";
+    }
+    .productos{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content:flex-start;
+    }
+    ul{
+        display: flex;
+        justify-content:left;
+        justify-content: center;
+        flex-direction: column;
+    } 
+    .paginas{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .pH{
+        display: none;
+    }
+    .caja {
+        .imagen{
+            width: 100%;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease-in-out;
+        }
+        :hover.imagen {
+        filter: grayscale(0%);
+        }
+    }
+    .fotoBot{
+        width: 5%;
+    }
+}
